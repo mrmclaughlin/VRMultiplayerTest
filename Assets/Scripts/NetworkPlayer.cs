@@ -37,6 +37,7 @@ public class NetworkPlayer : MonoBehaviour
 		 Renderer rend = aSnowball.GetComponent<Renderer>();
         // Change the material color to red
 		 rend.material.color = randomColor;
+		 randomColor.a = 0.5f;
 			aSnowball.transform.SetParent(spawnedSnowballPilePrefab.transform);
         }
 			
