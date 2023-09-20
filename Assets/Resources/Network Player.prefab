@@ -174,6 +174,10 @@ MonoBehaviour:
   head: {fileID: 7533833771499606692}
   leftHand: {fileID: 4693798586147411326}
   rightHand: {fileID: 6280763270695932261}
+  snowballPrefab: {fileID: 2127377322730302586, guid: e97c406cb63659141b4d0a252428804d,
+    type: 3}
+  numberOfSnowballs: 50
+  areaRadius: 1
 --- !u!1 &3743034152176808861
 GameObject:
   m_ObjectHideFlags: 0

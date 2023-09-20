@@ -3,7 +3,12 @@ guid: 3a3597a9a0dab454d80d2f1fdd5137fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - head: {instanceID: 0}
+  - leftHand: {instanceID: 0}
+  - rightHand: {instanceID: 0}
+  - snowballPrefab: {fileID: 2127377322730302586, guid: e97c406cb63659141b4d0a252428804d,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

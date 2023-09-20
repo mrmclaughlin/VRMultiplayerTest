@@ -12,11 +12,9 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
    public override void OnJoinedRoom(){
 	base.OnJoinedRoom();
 	spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player",transform.position,transform.rotation);
-	for (int i=0;i<10;i++)
-	{
-		spawnedSnowballPrefab = PhotonNetwork.Instantiate("Snowball",transform.position,transform.rotation);
-		//mySnowBalls[i] = spawnedSnowballPrefab;
-	}
+	//spawnedSnowballPrefab = PhotonNetwork.Instantiate("SnowballPile",transform.position,transform.rotation);
+		
+	
 	 
 	 
    }
@@ -25,11 +23,10 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 	base.OnLeftRoom();
 	PhotonNetwork.Destroy(spawnedPlayerPrefab);
 	
-	for (int i=0;i<10;i++)
-	{
+	
 		 
-		PhotonNetwork.Destroy(spawnedPlayerPrefab);
-		//PhotonNetwork.Destroy(mySnowBalls[i]);  
+		PhotonNetwork.Destroy(spawnedSnowballPrefab);
+		 
 	}
 	
 	
@@ -38,4 +35,4 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 	
    }
    
-}
+
