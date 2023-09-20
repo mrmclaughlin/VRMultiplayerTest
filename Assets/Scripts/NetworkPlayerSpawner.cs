@@ -24,7 +24,7 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 	
 	
 		 
-		PhotonNetwork.Destroy(spawnedSnowballPrefab);
+		
 		 
 	}
 	
