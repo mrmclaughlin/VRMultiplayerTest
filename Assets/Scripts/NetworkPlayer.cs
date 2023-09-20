@@ -13,15 +13,59 @@ public class NetworkPlayer : MonoBehaviour
 	private GameObject spawnedSnowballPilePrefab;
 	public GameObject snowballPrefab;  // Drag your snowball prefab here
     public int numberOfSnowballs = 50; // Number of snowballs in the pile
-    public float areaRadius = 2f;      // Radius of the pile
-
+    public float areaRadius = 10f;      // Radius of the pile
+	public int rows = 5;
+    public int columns = 5;
+    public int height = 5;
+    public float spacing = 2;
+		public int xMin =-10;
+		public int yMin=-10;
+		public int zMin=-10;
+		public int xMax=10;
+		public int yMax=10;
+		public int zMax=10;
     // Start is called before the first frame update
     void Start()
     {
+		Vector3 offset = new Vector3( 20, 0,   20);
+		Vector3 offset2 = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax),  Random.Range(zMin, zMax));
+		
         photonView = GetComponent<PhotonView>();
 		spawnedSnowballPilePrefab = PhotonNetwork.Instantiate("SnowballPile",transform.position,transform.rotation);
+		spawnedSnowballPilePrefab.transform.position += offset;
 	Color randomColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
        
+	   GameObject NetworkPlayerRig = GameObject.Find("NetworkPlayer"+photonView.ViewID); // Replace with your XR origin's name
+	   Debug.Log(NetworkPlayerRig);
+	   //NetworkPlayerRig.transform.position += offset;
+	    for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < rows; x++)
+            {
+                for (int z = 0; z < columns; z++)
+                {
+                    Vector3 position = new Vector3(
+                        x * spacing,
+                        y * spacing,
+                        z * spacing
+                    );
+					position += offset;
+	 		 
+			GameObject aSnowball =Instantiate(snowballPrefab, position + transform.position, Quaternion.identity);
+			aSnowball.name = "snowball" + photonView.ViewID; 
+			Renderer renderer = aSnowball.GetComponent<Renderer>();
+            aSnowball.transform.SetParent(spawnedSnowballPilePrefab.transform);
+			if (renderer != null)
+            {
+                renderer.material.color = randomColor;
+            }
+			
+                }
+            }
+		}
+	   
+	   /*
+	   
     
         for (int i = 0; i < numberOfSnowballs; i++)
         {
@@ -40,6 +84,7 @@ public class NetworkPlayer : MonoBehaviour
 		 randomColor.a = 0.5f;
 			aSnowball.transform.SetParent(spawnedSnowballPilePrefab.transform);
         }
+		*/
 			
     }
 

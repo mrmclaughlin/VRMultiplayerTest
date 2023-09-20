@@ -178,6 +178,16 @@ MonoBehaviour:
     type: 3}
   numberOfSnowballs: 50
   areaRadius: 1
+  rows: 5
+  columns: 5
+  height: 5
+  spacing: 2
+  xMin: -10
+  yMin: -10
+  zMin: -10
+  xMax: 10
+  yMax: 10
+  zMax: 10
 --- !u!1 &3743034152176808861
 GameObject:
   m_ObjectHideFlags: 0
