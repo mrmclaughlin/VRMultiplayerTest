@@ -27,15 +27,17 @@ public class NetworkPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		Vector3 offset = new Vector3( 20, 0,   20);
+		Vector3 offset = new Vector3( -2, 0,   2);
 		Vector3 offset2 = new Vector3(Random.Range(xMin, xMax), Random.Range(yMin, yMax),  Random.Range(zMin, zMax));
 		
         photonView = GetComponent<PhotonView>();
 		spawnedSnowballPilePrefab = PhotonNetwork.Instantiate("SnowballPile",transform.position,transform.rotation);
 		spawnedSnowballPilePrefab.transform.position += offset;
+		
 	Color randomColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
        
 	   GameObject NetworkPlayerRig = GameObject.Find("NetworkPlayer"+photonView.ViewID); // Replace with your XR origin's name
+	   
 	   Debug.Log(NetworkPlayerRig);
 	   //NetworkPlayerRig.transform.position += offset;
 	    for (int y = 0; y < height; y++)
