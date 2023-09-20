@@ -1,1 +1,5 @@
-the test
+to set up git 
+create repo
+go to github in developer settings and generate a token
+in windows credential add username and the token as password 
+test it out
