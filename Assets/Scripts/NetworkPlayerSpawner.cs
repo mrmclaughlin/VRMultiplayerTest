@@ -12,7 +12,6 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
    public override void OnJoinedRoom(){
 	base.OnJoinedRoom();
 	spawnedPlayerPrefab = PhotonNetwork.Instantiate("Network Player",transform.position,transform.rotation);
-	//spawnedSnowballPrefab = PhotonNetwork.Instantiate("SnowballPile",transform.position,transform.rotation);
 		
 	
 	 
