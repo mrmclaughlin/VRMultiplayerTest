@@ -3,3 +3,49 @@ create repo
 go to github in developer settings and generate a token
 in windows credential add username and the token as password 
 test it out
+
+
+GIT COMMANDS
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity
+$ mkdir VRMultiplayerTest
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity
+$ cd VRMultiplayerTest
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest
+$ git init
+Initialized empty Git repository in D:/STORAGE/Unity/VRMultiplayerTest/.git/
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+ 
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (master)
+$ git branch -m master main
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (main)
+$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+  
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (main)
+$ git remote add origin https://github.com/mrmclaughlin/VRMultiplayerTest.git
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (main)
+$ git remote -v
+origin  https://github.com/mrmclaughlin/VRMultiplayerTest.git (fetch)
+origin  https://github.com/mrmclaughlin/VRMultiplayerTest.git (push)
+
+tom@DESKTOP-F47IP32 MINGW64 /d/STORAGE/Unity/VRMultiplayerTest (main)
+$ git pull origin main
+
